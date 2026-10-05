@@ -34,5 +34,5 @@ Client work. Art direction, dark stage-light look, and a mobile-first rebuild wi
 
 **Stack** · TypeScript, Node.js, Express, Python, React, Next.js, PostgreSQL, pgvector, Mastra, Claude API, OpenAI, local models via LM Studio, Lovable, Vercel, Figma
 
-**Languages** · Swedish, English and Tigrinya (native), Arabic
+**Languages** · Swedish and English (native), Tigrinya and Arabic (B2)
 
