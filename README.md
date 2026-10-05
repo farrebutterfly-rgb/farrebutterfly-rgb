@@ -16,7 +16,13 @@ Retrieval layer for Holger Hub, the platform where my agents (Claude Code, Codex
 
 Measured on a question set with known answers, the share of questions with the right fact in the top 5 went from 45 % with plain vector search to 77 %.
 
-→ [github.com/farrebutterfly-rgb/hub-minne](https://github.com/farrebutterfly-rgb/hub-minne)
+Code: [github.com/farrebutterfly-rgb/hub-minne](https://github.com/farrebutterfly-rgb/hub-minne)
+
+#### Products on top of the platform
+
+- **[Relta](https://relta.app)** · AI accounting bureau for Swedish companies. Agents do the bookkeeping, payroll and tax work, and an authorized accountant reviews and signs off. BankID and bank connections.
+- **[Lexra](https://lexra.se)** · AI-driven law firm. Agents draft and review, a licensed lawyer signs. Contract review scored 87 % recall and 100 % precision on our own benchmark.
+- **[Wattvik](https://wattvik.com)** · co-founder. Monitoring of electronic component shortages and sourcing for B2B buyers.
 
 #### Also
 
