@@ -28,7 +28,7 @@ Client work. Art direction, dark stage-light look, and a mobile-first rebuild wi
 
 - **Press kits** for the DJs bbygusi and diegoxmami: one-pager, rider with stage plot, bios in Swedish and English, logo files, print-locked to A4.
 - **Regla**, a concept for automating paperwork in Swedish civil construction: design system in Figma (variables, 14 text styles, mobile and web screens) and a pitch deck with CAD-style drawings.
-- **6FEMNOLL**, a Stockholm club concept with thousands of visitors: event production, funding, video walls and brand loops.
+- **6FEMNOLL**, co-founder. A Stockholm club concept with thousands of visitors: event production, partnerships, funding, video walls and brand loops.
 
 ---
 
