@@ -6,7 +6,7 @@ Stockholm. I build AI agents, retrieval systems and the websites around them, an
 
 #### HolgerAI · retrofit autonomy for forklifts
 
-A kit that makes the forklifts a warehouse already owns drive themselves. The software can ask for full throttle, but permission to move runs through a hardware gate that no software can open. Swedish patent application SE 2530598-8 (2025) and PCT application (2026). I designed and built the site.
+HolgerAI is a Swedish deep tech company. It builds a kit, with its own hardware, that makes the forklifts a warehouse already owns drive themselves. The software can ask for full throttle, but permission to move runs through a hardware gate that no software can open. Swedish patent application SE 2530598-8 (2025) and PCT application (2026). I designed and built the site.
 
 [![holgerai.com](bilder/holgerai.jpg)](https://holgerai.com)
 
