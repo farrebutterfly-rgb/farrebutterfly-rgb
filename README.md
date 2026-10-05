@@ -18,15 +18,8 @@ Measured on a question set with known answers, the share of questions with the r
 
 → [github.com/farrebutterfly-rgb/hub-minne](https://github.com/farrebutterfly-rgb/hub-minne)
 
-#### bbygusi.com · site for a touring DJ and booker
-
-Client work. Art direction, dark stage-light look, and a mobile-first rebuild with lighter video so it loads fast on a phone at the venue. Built in Lovable and React.
-
-[![bbygusi.com](bilder/bbygusi.jpg)](https://bbygusi.com)
-
 #### Also
 
-- **Press kits** for the DJs bbygusi and diegoxmami: one-pager, rider with stage plot, bios in Swedish and English, logo files, print-locked to A4.
 - **Regla**, a concept for automating paperwork in Swedish civil construction: design system in Figma (variables, 14 text styles, mobile and web screens) and a pitch deck with CAD-style drawings.
 - **6FEMNOLL**, co-founder. A Stockholm club concept with thousands of visitors: event production, partnerships, funding, video walls and brand loops.
 
