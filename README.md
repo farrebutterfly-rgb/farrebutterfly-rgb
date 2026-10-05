@@ -1,6 +1,6 @@
 ### Farre
 
-Stockholm. I build AI agents, retrieval systems and the websites around them, and I run them in production on my own hardware. Founder of [HolgerAI](https://holgerai.com). By day, Lead Material Handler in GMP-regulated manufacturing at Cepheid, which is where the idea for HolgerAI came from.
+Stockholm. I build AI agents, retrieval systems and the websites around them, and I run them in production on my own hardware. Founder of [HolgerAI](https://holgerai.com).
 
 ---
 
@@ -21,7 +21,6 @@ Measured on a question set with known answers, the share of questions with the r
 #### Also
 
 - **Regla**, a concept for automating paperwork in Swedish civil construction: design system in Figma (variables, 14 text styles, mobile and web screens) and a pitch deck with CAD-style drawings.
-- **6FEMNOLL**, co-founder. A Stockholm club concept with thousands of visitors: event production, partnerships, funding, video walls and brand loops.
 
 ---
 
