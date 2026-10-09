@@ -4,6 +4,10 @@ Stockholm. I build AI agents, retrieval systems and the websites around them, an
 
 ---
 
+#### Kontoret · the agents at work, live
+
+A small office where the people have been replaced by my agents: one desk per company, a phone that lights up when an action waits for my yes, a lamp by the door for the gate that checks all text before it leaves the house. The numbers are real and fetched from the platform every five minutes; only counts leave the machine. [holgerai.com/kontoret](https://holgerai.com/kontoret)
+
 #### HolgerAI · retrofit autonomy for forklifts
 
 HolgerAI is a Swedish deep tech company. It is building a kit, with its own hardware, designed to make the forklifts a warehouse already owns drive themselves. The software can ask for full throttle, but permission to move runs through a hardware gate that no software can open. Swedish patent application SE 2530598-8 (2025) and PCT application (2026). I designed and built the site.
@@ -32,7 +36,7 @@ The agent platform runs on Kubernetes (k3s) set up with Terraform, delivered wit
 
 ---
 
-**Stack** · TypeScript, Node.js, Express, Python, React, Next.js, PostgreSQL, pgvector, Mastra, Claude API, OpenAI, local models via LM Studio, Kubernetes, Terraform, Argo CD, Lovable, Vercel, Figma
+**Stack** · TypeScript, Node.js, Express, Python, React, Next.js, PostgreSQL, pgvector, Mastra, Claude API, OpenAI, local models via LM Studio, Kubernetes, Terraform, Argo CD, Google Cloud, Lovable, Vercel, Figma
 
 **Languages** · Swedish and English (native), Tigrinya and Arabic (B2)
 
