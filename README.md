@@ -22,9 +22,11 @@ HolgerAI is a Swedish deep tech company. It is building a kit, with its own hard
 - **[svenska-pii](https://github.com/farrebutterfly-rgb/svenska-pii)** · Swedish PII recognizers with check-digit validation (personnummer, samordningsnummer, orgnr, bankgiro, plusgiro, IBAN) and Presidio integration. The benchmark shows why: on 1,500 lookalike numbers (dates, OCR and build numbers, wrong check digits) Presidio's default recognizers flag 44 %, svenska-pii 2.5 %, and without Swedish recognizers no Swedish identifier gets its right type. Try the rules in the browser at [holgerai.com/grind](https://holgerai.com/grind).
 - **[hub-minne](https://github.com/farrebutterfly-rgb/hub-minne)** · local RAG memory for my agent platform. TypeScript, Mastra, Express and PostgreSQL with pgvector. Hybrid search (vectors plus Postgres full text, fused with Reciprocal Rank Fusion), source weighting, and a Mastra agent answering with citations from a local Qwen model. Measured on a question set with known answers, the share of questions with the right fact in the top 5 went from 45 % with plain vector search to 77 %.
 
+Both packages run CodeQL, pip-audit and a CycloneDX SBOM on every push, with Dependabot and a SECURITY.md for private vulnerability reports.
+
 #### The platform, with its checks
 
-The agent platform runs on Kubernetes (k3s) set up with Terraform, delivered with Argo CD, login and roles in Keycloak, Kyverno policies, Ansible hardening and Wazuh alerts. The results of every automated check, with raw output, are at [holgerai.com/plattform](https://holgerai.com/plattform) (in Swedish). When something goes wrong I write it up: [postmortem, 3 and 4 October 2026](https://holgerai.com/plattform/incident-2026-10-04.html), three calls blocked because the hook gave up after 3 seconds while the gate was still scanning. Nothing leaked, the timeout was wrong, and the fix is measured.
+The agent platform runs on Kubernetes (k3s) set up with Terraform, delivered with Argo CD, login and roles in Keycloak, Kyverno policies, Ansible hardening, Wazuh alerts, and Prometheus and Grafana on the gate's scan latency. The results of every automated check, with raw output, are at [holgerai.com/plattform](https://holgerai.com/plattform) (in Swedish), together with the [threat model](https://holgerai.com/plattform/hotmodell.html) (eleven threats, the control for each, the evidence, and what is still missing) and the [architecture decisions](https://holgerai.com/plattform/beslut.html) (ten decisions with context and consequences, including the ones that turned out wrong). When something goes wrong I write it up: [postmortem, 3 and 4 October 2026](https://holgerai.com/plattform/incident-2026-10-04.html), three calls blocked because the hook gave up after 3 seconds while the gate was still scanning. Nothing leaked, the timeout was wrong, and the fix is measured.
 
 #### Products on top of the platform
 
@@ -38,7 +40,7 @@ The agent platform runs on Kubernetes (k3s) set up with Terraform, delivered wit
 
 ---
 
-**Stack** · TypeScript, Node.js, Express, Python, React, Next.js, PostgreSQL, pgvector, Mastra, Claude API, OpenAI, local models via LM Studio, Kubernetes, Terraform, Argo CD, Google Cloud, Lovable, Vercel, Figma
+**Stack** · TypeScript, Node.js, Express, Python, React, Next.js, PostgreSQL, pgvector, Mastra, Claude API, OpenAI, local models via LM Studio, Kubernetes, Terraform, Argo CD, Google Cloud, Prometheus, Grafana, Wazuh, Lovable, Vercel, Figma
 
 **Languages** · Swedish and English (native), Tigrinya and Arabic (B2)
 
