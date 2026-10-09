@@ -2,11 +2,13 @@
 
 Stockholm. I build AI agents, retrieval systems and the websites around them, and I run them in production on my own hardware. Founder of [HolgerAI](https://holgerai.com).
 
+[![fail-closed, verified every night](https://img.shields.io/endpoint?url=https://storage.googleapis.com/holgerai-kontoret/kaosprov_badge.json)](https://holgerai.com/kontoret) The badge is written by a chaos test that runs on the platform every night at 04:30: it kills the PII gate on purpose, checks that every outbound call is denied while it is down, waits for it to come back on its own, checks that personal data is still stopped and clean text still passes, switches the emergency stop on and off, and checks that the event reached the SIEM. Nine steps. If one fails the badge turns red and I get it on my phone.
+
 ---
 
 #### Kontoret · the agents at work, live
 
-A small office where the people have been replaced by my agents: one desk per company, a phone that lights up when an action waits for my yes, a lamp by the door for the gate that checks all text before it leaves the house. The numbers are real and fetched from the platform every five minutes; only counts leave the machine. [holgerai.com/kontoret](https://holgerai.com/kontoret)
+A small office where the people have been replaced by my agents: one desk per company, a phone that lights up when an action waits for my yes, a lamp by the door for the gate that checks all text before it leaves the house, and a button that lets you attack an agent and watch what the platform does about it. The numbers are real and fetched from the platform every five minutes; only counts leave the machine. [holgerai.com/kontoret](https://holgerai.com/kontoret)
 
 #### HolgerAI · retrofit autonomy for forklifts
 
@@ -22,7 +24,7 @@ HolgerAI is a Swedish deep tech company. It is building a kit, with its own hard
 
 #### The platform, with its checks
 
-The agent platform runs on Kubernetes (k3s) set up with Terraform, delivered with Argo CD, login and roles in Keycloak, Kyverno policies, Ansible hardening and Wazuh alerts. The results of every automated check, with raw output, are at [holgerai.com/plattform](https://holgerai.com/plattform) (in Swedish).
+The agent platform runs on Kubernetes (k3s) set up with Terraform, delivered with Argo CD, login and roles in Keycloak, Kyverno policies, Ansible hardening and Wazuh alerts. The results of every automated check, with raw output, are at [holgerai.com/plattform](https://holgerai.com/plattform) (in Swedish). When something goes wrong I write it up: [postmortem, 3 and 4 October 2026](https://holgerai.com/plattform/incident-2026-10-04.html), three calls blocked because the hook gave up after 3 seconds while the gate was still scanning. Nothing leaked, the timeout was wrong, and the fix is measured.
 
 #### Products on top of the platform
 
