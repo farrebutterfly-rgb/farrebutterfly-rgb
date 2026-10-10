@@ -6,6 +6,14 @@ Stockholm. I build AI agents, retrieval systems and the websites around them, an
 
 ---
 
+#### Fråga · ask the agent
+
+An agent that answers questions about the platform and about my work, in Swedish or English, from published material only, with the sources under every answer. Gemini on Vertex AI in the EU, on Cloud Run, behind the same PII gate that protects the platform: paste a personnummer into the question and it is stopped in your browser before it is even sent, and again in the service if it gets that far. The answer is scanned before it leaves. Nothing is logged with content, there is a daily cap, and the service account has one role. Deployed with Terraform on an image digest. [holgerai.com/fraga](https://holgerai.com/fraga)
+
+#### Grinden · the gate, in your browser
+
+The Swedish personal data rules that sit in front of every outbound call from my agents, as a page that runs entirely in the browser with zero network calls. Paste a text, watch the stamp come down (STOPPAS or SLÄPPS), change the last digit of a hit and see the check digit fail, add a protected client name, try full-width digits. A terminal panel shows exactly what the agent sees in Claude Code when the hook blocks a call: exit 2, the reason, and the fingerprint the phone approval is bound to. The JavaScript port is tested against the Python original on 950 texts with identical hits, verdicts and masking, and the page runs 48 of them as a self test every time it loads. [holgerai.com/grind](https://holgerai.com/grind)
+
 #### Kontoret · the agents at work, live
 
 A small office where the people have been replaced by my agents: one desk per company, a phone that lights up when an action waits for my yes, a lamp by the door for the gate that checks all text before it leaves the house, and a button that lets you attack an agent and watch what the platform does about it. The numbers are real and fetched from the platform every five minutes; only counts leave the machine. [holgerai.com/kontoret](https://holgerai.com/kontoret)
@@ -40,7 +48,7 @@ The agent platform runs on Kubernetes (k3s) set up with Terraform, delivered wit
 
 ---
 
-**Stack** · TypeScript, Node.js, Express, Python, React, Next.js, PostgreSQL, pgvector, Mastra, Claude API, OpenAI, local models via LM Studio, Kubernetes, Terraform, Argo CD, Google Cloud, Prometheus, Grafana, Wazuh, Lovable, Vercel, Figma
+**Stack** · TypeScript, Node.js, Express, Python, React, Next.js, PostgreSQL, pgvector, Mastra, Claude API, OpenAI, Gemini on Vertex AI, local models via LM Studio, Kubernetes, Terraform, Argo CD, Google Cloud Run, Prometheus, Grafana, Wazuh, Lovable, Vercel, Figma
 
 **Languages** · Swedish and English (native), Tigrinya and Arabic (B2)
 
