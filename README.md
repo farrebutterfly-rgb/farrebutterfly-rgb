@@ -1,35 +1,52 @@
 ### Farre
 
-Stockholm. I build AI agents for regulated work, where personal data must never leak and a human approves before anything leaves the system. Founder of [HolgerAI](https://holgerai.com).
+Stockholm. I build AI agents, retrieval systems and the websites around them, and I run them in production on my own hardware. Founder of [HolgerAI](https://holgerai.com).
 
-[![fail-closed, verified every night](https://img.shields.io/endpoint?url=https://storage.googleapis.com/holgerai-kontoret/kaosprov_badge.json)](https://holgerai.com/kontoret) A chaos test kills my PII gate every night at 04:30 and checks that every outbound call is denied until it comes back. Nine steps. If one fails, the badge turns red and my phone rings.
+---
 
-#### Try it live
+#### HolgerAI · retrofit autonomy for forklifts
 
-| | |
-|---|---|
-| **[Kontoret](https://holgerai.com/kontoret)** | My agents at work, one desk per company, real numbers every five minutes. Attack an agent and watch the platform stop it. |
-| **[Fråga](https://holgerai.com/fraga)** | Ask about my work in Swedish or English. Sources under every answer, and a personnummer is stopped in your browser before it is sent. |
-| **[Grinden](https://holgerai.com/grind)** | The Swedish PII rules in the browser, zero network calls. Change a check digit and watch the verdict flip. |
+HolgerAI is a Swedish deep tech company. It is building a kit, with its own hardware, designed to make the forklifts a warehouse already owns drive themselves. The software can ask for full throttle, but permission to move runs through a hardware gate that no software can open. Swedish patent application SE 2530598-8 (2025) and PCT application (2026). I designed and built the site.
 
-#### Open source
+[![holgerai.com](bilder/holgerai.jpg)](https://holgerai.com)
 
-- **[svenska-pii](https://github.com/farrebutterfly-rgb/svenska-pii)** · Swedish PII recognizers with check-digit validation for Presidio. On 1,500 lookalike numbers, Presidio's defaults flag 44 %, svenska-pii 2.5 %.
-- **[agent-permit](https://github.com/farrebutterfly-rgb/agent-permit)** · A human approves one exact agent action from the phone. Claude Code hook and MCP server, hash-chained audit log, emergency stop.
-- **[hub-minne](https://github.com/farrebutterfly-rgb/hub-minne)** · Local RAG memory with hybrid search and RRF. Right fact in the top 5 went from 45 % to 77 % on a fixed question set.
+#### hub-minne · local RAG memory for an agent platform
 
-CodeQL, pip-audit and a CycloneDX SBOM on every push.
+Retrieval layer for Holger Hub, the platform where my agents (Claude Code, Codex, OpenClaw, Hermes) run around the clock. TypeScript, Mastra, Express and PostgreSQL with pgvector. Hybrid search (vectors plus Postgres full text, fused with Reciprocal Rank Fusion), source weighting, and a Mastra agent answering with citations from a local Qwen model. Nothing leaves the machine.
 
-#### How the platform is run
+Measured on a question set with known answers, the share of questions with the right fact in the top 5 went from 45 % with plain vector search to 77 %.
 
-Kubernetes with Terraform, Argo CD, Keycloak, Kyverno and Wazuh. Every check with raw output, the [threat model](https://holgerai.com/plattform/hotmodell.html), the [architecture decisions](https://holgerai.com/plattform/beslut.html) and a [postmortem](https://holgerai.com/plattform/incident-2026-10-04.html) are public at [holgerai.com/plattform](https://holgerai.com/plattform).
+Code: [github.com/farrebutterfly-rgb/hub-minne](https://github.com/farrebutterfly-rgb/hub-minne)
 
-#### Products in development
+#### Portfolio · eight runnable AI engineering projects
 
-- **[Relta](https://relta.app)** · AI accounting for businesses of every size. Agents do the bookkeeping, an authorised accountant signs with BankID.
-- **[Lexra](https://lexra.se)** · AI legal work where a licensed lawyer signs. Contract review: 87 % recall, 100 % precision on our own test set.
-- **[HolgerAI](https://holgerai.com)** · A retrofit kit that makes existing forklifts drive themselves, with a hardware gate no software can open. Patent pending (SE and PCT).
+Each repo runs a full demo with no API key, ships its own tests and run logs, and says plainly what it does not prove yet.
 
-**Stack** · TypeScript, Python, Node.js, Next.js, PostgreSQL with pgvector, Claude, OpenAI, Gemini on Vertex AI, local Qwen, Kubernetes, Terraform, Cloud Run, Prometheus, Grafana
+| Repo | What it shows |
+| --- | --- |
+| [agent-toolkit](https://github.com/farrebutterfly-rgb/agent-toolkit) | Tool-calling agent: schema-validated tools, HTTP integration, timeouts, step limit, grounded final answer |
+| [grounded-context](https://github.com/farrebutterfly-rgb/grounded-context) | Retrieval with citations checked against source text; three context strategies compared under a token budget |
+| [remember-me](https://github.com/farrebutterfly-rgb/remember-me) | Persistent, user-owned memory with correction, deletion and backend-enforced access |
+| [review-workflow](https://github.com/farrebutterfly-rgb/review-workflow) | Planner/worker extraction, Python validator and human review, benchmarked against a single agent |
+| [agent-evals](https://github.com/farrebutterfly-rgb/agent-evals) | 50 labelled cases, held-out split, regression check that catches degraded systems |
+| [sandbox-runner](https://github.com/farrebutterfly-rgb/sandbox-runner) | Sandbox for agent-written Python; 13 isolation controls verified with bubblewrap and unshare |
+| [durable-jobs](https://github.com/farrebutterfly-rgb/durable-jobs) | Checkpointed jobs that survive SIGKILL, idempotent requests, bounded retries |
+| [agent-api-sdk](https://github.com/farrebutterfly-rgb/agent-api-sdk) | React and TypeScript product with documented API, typed SDK, Python step, auth and rate limits |
+
+#### Products on top of the platform
+
+- **[Relta](https://relta.app)** · AI accounting bureau for Swedish companies. Built so that agents do the bookkeeping and an authorized accountant reviews and signs off. Deployed on Vercel and Neon with Stripe, BankID and bank connection. A PKI certificate from Expisoft ties the organisation e-ID to the company registration number.
+- **[Lexra](https://lexra.se)** · AI-driven law firm. Built so that agents draft and review and a licensed lawyer signs. Contract review scored 87 % recall and 100 % precision on our own test set.
+- **[Wattvik](https://wattvik.com)** · co-founder. Monitoring of electronic component shortages and sourcing for B2B buyers.
+
+#### Also
+
+- **Regla**, a concept for automating paperwork in Swedish civil construction: design system in Figma (variables, 14 text styles, mobile and web screens) and a pitch deck with CAD-style drawings.
+
+---
+
+**Stack** · TypeScript, Node.js, Express, Python, React, Next.js, PostgreSQL, pgvector, Mastra, Claude API, OpenAI, local models via LM Studio, Lovable, Vercel, Figma
+
+**Languages** · Swedish and English (native), Tigrinya and Arabic (B2)
 
 farre@holgerai.com
