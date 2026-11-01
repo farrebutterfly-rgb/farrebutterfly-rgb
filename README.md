@@ -1,6 +1,6 @@
 ### Farre
 
-Stockholm. I build AI agents, retrieval systems and the websites around them, and I run them in production on my own hardware. Founder of [HolgerAI](https://holgerai.com).
+Stockholm. I build AI agents, retrieval systems and the websites around them, and I run them in production on my own hardware. Founder of [HolgerAI](https://holgerai.com) and [Nolma](https://nolma.se).
 
 ---
 
@@ -9,6 +9,12 @@ Stockholm. I build AI agents, retrieval systems and the websites around them, an
 HolgerAI is a Swedish deep tech company. It is building a kit, with its own hardware, designed to make the forklifts a warehouse already owns drive themselves. The software can ask for full throttle, but permission to move runs through a hardware gate that no software can open. Swedish patent application SE 2530598-8 (2025) and PCT application (2026). I designed and built the site.
 
 [![holgerai.com](bilder/holgerai.jpg)](https://holgerai.com)
+
+#### Nolma · AI studio for Swedish companies
+
+Nolma is the AI studio inside HolgerAI. It builds the whole package for a company: website, app, a dashboard for the staff and AI agents that do the routine work, with a person approving before anything goes out. The site starts as a phone, because that is where most customers meet a company first. I designed and built the site.
+
+[![nolma.se](bilder/nolma.jpg)](https://nolma.se)
 
 #### hub-minne · local RAG memory for an agent platform
 
