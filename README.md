@@ -1,57 +1,60 @@
 ### Farre
 
-Stockholm. I build AI agents, retrieval systems and the websites around them, and I run them in production on my own hardware. Founder of [HolgerAI](https://holgerai.com) and [Nolma](https://nolma.se).
+Stockholm. I build AI agents, retrieval and data pipelines, and I measure them against fixed test sets before I trust them. Founder of [HolgerAI](https://holgerai.com) and [Nolma](https://nolma.se). Day job: team lead in GMP-regulated production of molecular diagnostic tests (ISO 13485, IVDR), so I am used to SOPs, deviations and audits.
 
 ---
 
 #### HolgerAI · retrofit autonomy for forklifts
 
-HolgerAI is a Swedish deep tech company. It is building a kit, with its own hardware, designed to make the forklifts a warehouse already owns drive themselves. The software can ask for full throttle, but permission to move runs through a hardware gate that no software can open. Swedish patent application SE 2530598-8 (2025) and PCT application (2026). I designed and built the site.
+A Swedish deep tech company building a kit, with its own hardware, that makes the forklifts a warehouse already owns drive themselves. The software can ask for full throttle, but permission to move runs through a hardware gate that no software can open.
+
+- Finalist, IFOY Award 2027, category IFOY Start-up of the Year
+- Swedish patent application SE 2530598-8 (2025) and PCT application (2026)
 
 [![holgerai.com](bilder/holgerai.jpg)](https://holgerai.com)
 
 #### Nolma · AI studio for Swedish companies
 
-Nolma is the AI studio inside HolgerAI. It builds the whole package for a company: website, app, a dashboard for the staff and AI agents that do the routine work, with a person approving before anything goes out. The site starts as a phone, because that is where most customers meet a company first. I designed and built the site.
+Builds the whole package for a company: website, app, a dashboard for the staff and AI agents that do the routine work, with a person approving before anything goes out. I designed and built the site.
 
 [![nolma.se](bilder/nolma.jpg)](https://nolma.se)
 
-#### hub-minne · local RAG memory for an agent platform
+---
 
-Retrieval layer for Holger Hub, the platform where my agents (Claude Code, Codex, OpenClaw, Hermes) run around the clock. TypeScript, Mastra, Express and PostgreSQL with pgvector. Hybrid search (vectors plus Postgres full text, fused with Reciprocal Rank Fusion), source weighting, and a Mastra agent answering with citations from a local Qwen model. Nothing leaves the machine.
+#### Start here
 
-Measured on a question set with known answers, the share of questions with the right fact in the top 5 went from 45 % with plain vector search to 77 %.
+| Repo | What it is | Measured |
+| --- | --- | --- |
+| [wattvik-signals](https://github.com/farrebutterfly-rgb/wattvik-signals) | Daily ingest of manufacturer PCN/EOL notices and distributor market letters, tagged and matched against a customer's BOM. Python, PostgreSQL, CI with Postgres as a service | 107 tests |
+| [flight-time-check](https://github.com/farrebutterfly-rgb/flight-time-check) | Live test of a flight search app inside ChatGPT against the booking website. Found local times labelled as UTC, wrote the fix and tested the fix | 25 searches, before and after |
+| [hub-minne](https://github.com/farrebutterfly-rgb/hub-minne) | Local RAG memory for an agent platform. Hybrid search (pgvector plus Postgres full text, Reciprocal Rank Fusion), citations, local model | Right fact in top 5: 45 % to 77 % |
+| [svenska-pii](https://github.com/farrebutterfly-rgb/svenska-pii) | Swedish PII recognizers with check-digit validation: personnummer, samordningsnummer, organisationsnummer, bankgiro, IBAN. Optional Presidio integration | Benchmarked on Skatteverket test numbers |
+| [agent-permit](https://github.com/farrebutterfly-rgb/agent-permit) | Human approval for one exact agent action: pre-tool hook, MCP server, approval from the phone, hash-chained audit log | Blocks by default when input cannot be parsed |
 
-Code: [github.com/farrebutterfly-rgb/hub-minne](https://github.com/farrebutterfly-rgb/hub-minne)
+#### AI engineering exercises
 
-#### Portfolio · eight runnable AI engineering projects
-
-Each repo runs a full demo with no API key, ships its own tests and run logs, and says plainly what it does not prove yet.
+Small, runnable projects. Each runs a demo with no API key, ships its own tests and says plainly what it does not prove yet.
 
 | Repo | What it shows |
 | --- | --- |
-| [agent-toolkit](https://github.com/farrebutterfly-rgb/agent-toolkit) | Tool-calling agent: schema-validated tools, HTTP integration, timeouts, step limit, grounded final answer |
-| [grounded-context](https://github.com/farrebutterfly-rgb/grounded-context) | Retrieval with citations checked against source text; three context strategies compared under a token budget |
-| [remember-me](https://github.com/farrebutterfly-rgb/remember-me) | Persistent, user-owned memory with correction, deletion and backend-enforced access |
-| [review-workflow](https://github.com/farrebutterfly-rgb/review-workflow) | Planner/worker extraction, Python validator and human review, benchmarked against a single agent |
-| [agent-evals](https://github.com/farrebutterfly-rgb/agent-evals) | 50 labelled cases, held-out split, regression check that catches degraded systems |
-| [sandbox-runner](https://github.com/farrebutterfly-rgb/sandbox-runner) | Sandbox for agent-written Python; 13 isolation controls verified with bubblewrap and unshare |
+| [agent-evals](https://github.com/farrebutterfly-rgb/agent-evals) | 50 labelled cases, held-out split, regression check that fails on deliberately degraded systems |
+| [grounded-context](https://github.com/farrebutterfly-rgb/grounded-context) | Retrieval with citations checked against source text; three context strategies under a token budget |
+| [agent-toolkit](https://github.com/farrebutterfly-rgb/agent-toolkit) | Tool-calling agent with schema-validated tools, timeouts, step limit and a grounded final answer |
+| [review-workflow](https://github.com/farrebutterfly-rgb/review-workflow) | Planner and worker extraction with a Python validator and human review. The single agent won under a tight budget, and the repo says so |
 | [durable-jobs](https://github.com/farrebutterfly-rgb/durable-jobs) | Checkpointed jobs that survive SIGKILL, idempotent requests, bounded retries |
-| [agent-api-sdk](https://github.com/farrebutterfly-rgb/agent-api-sdk) | React and TypeScript product with documented API, typed SDK, Python step, auth and rate limits |
+| [sandbox-runner](https://github.com/farrebutterfly-rgb/sandbox-runner) | Sandbox for model-written Python; 13 isolation controls verified with bubblewrap and unshare |
+| [remember-me](https://github.com/farrebutterfly-rgb/remember-me) | User-owned memory with correction, deletion and backend-enforced access |
+| [agent-api-sdk](https://github.com/farrebutterfly-rgb/agent-api-sdk) | React and TypeScript product with a documented API, typed SDK, auth and rate limits |
 
-#### Products on top of the platform
+#### Products
 
-- **[Relta](https://relta.app)** · AI accounting bureau for Swedish companies. Built so that agents do the bookkeeping and an authorized accountant reviews and signs off. Deployed on Vercel and Neon with Stripe, BankID and bank connection. A PKI certificate from Expisoft ties the organisation e-ID to the company registration number.
-- **[Lexra](https://lexra.se)** · AI-driven law firm. Built so that agents draft and review and a licensed lawyer signs. Contract review scored 87 % recall and 100 % precision on our own test set.
-- **[Wattvik](https://wattvik.com)** · co-founder. Monitoring of electronic component shortages and sourcing for B2B buyers.
-
-#### Also
-
-- **Regla**, a concept for automating paperwork in Swedish civil construction: design system in Figma (variables, 14 text styles, mobile and web screens) and a pitch deck with CAD-style drawings.
+- **[Relta](https://relta.app)** · AI accounting for Swedish companies, in pilot. Agents do the bookkeeping and an authorised accountant signs with BankID. Next.js, Neon, Stripe, BankID, bank connection, Peppol.
+- **[Lexra](https://lexra.se)** · AI legal services. Contract review at 87 % recall and 100 % precision on a 136-question test set; a licensed lawyer signs.
+- **[knuff](https://knuffjobb.se)** · job search service, built but not launched. Reads every Platsbanken ad through the JobTech APIs, scores ads against the user's CV and checks every claim in a cover letter against the CV.
+- **[Wattvik](https://wattvik.com)** · component shortage monitoring for B2B buyers. Dormant since October 2026; the ingest is open as wattvik-signals above.
 
 ---
 
-**Stack** · TypeScript, Node.js, Express, Python, React, Next.js, PostgreSQL, pgvector, Mastra, Claude API, OpenAI, local models via LM Studio, Lovable, Vercel, Figma
+**Stack** · TypeScript, Node.js, Python, SQL, React, Next.js, PostgreSQL, pgvector, Supabase, Docker, GitHub Actions, LLM APIs, local models
 
-**Languages** · Swedish and English (native), Tigrinya and Arabic (B2)
-
+**Languages** · Swedish and English (fluent), Tigrinya and Arabic (B2)
