@@ -25,6 +25,8 @@ Builds the whole package for a company: website, app, a dashboard for the staff 
 
 | Repo | What it is | Measured |
 | --- | --- | --- |
+| [egress-grind](https://github.com/farrebutterfly-rgb/egress-grind) | Fail-closed gateway in front of a cloud LLM. Blocks or pseudonymises Swedish personal data, including disguised personnummer, and generalises text until at least five people in Sweden match, using SCB tables | 32 of 520 disguised numbers leak, against 119 to 418 for Presidio and LLM Guard |
+| [pcn-triage](https://github.com/farrebutterfly-rgb/pcn-triage) | Triage of supplier change notices with Azure OpenAI structured outputs, Entra ID only, no API key anywhere, Bicep infrastructure, grounding check against the source text | 24-case eval with a wrong-and-unflagged metric |
 | [wattvik-signals](https://github.com/farrebutterfly-rgb/wattvik-signals) | Daily ingest of manufacturer PCN/EOL notices and distributor market letters, tagged and matched against a customer's BOM. Python, PostgreSQL, CI with Postgres as a service | 107 tests |
 | [flight-time-check](https://github.com/farrebutterfly-rgb/flight-time-check) | Live test of a flight search app inside ChatGPT against the booking website. Found local times labelled as UTC, wrote the fix and tested the fix | 25 searches, before and after |
 | [hub-minne](https://github.com/farrebutterfly-rgb/hub-minne) | Local RAG memory for an agent platform. Hybrid search (pgvector plus Postgres full text, Reciprocal Rank Fusion), citations, local model | Right fact in top 5: 45 % to 77 % |
